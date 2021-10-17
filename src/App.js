@@ -1,28 +1,38 @@
-import logo from './logo.svg';
+import React, {Component} from 'react';
+import Searchbar from './Components/Searchbar/Searchbar';
+import ImageGallery from './Components/ImageGallery/ImageGallery';
+// import API from './Components/ApiService/Api'
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// const searchResult = 'black cat with car';
+// const page = 1;
+
+
+export default class App extends Component {
+  state = {
+    searchRequest: "",
+    page: "",
+    images: null,
+  };
+
+  componentDidMount() {
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+  }
+
+  handleSubmit = searchRequest => {
+    this.setState({searchRequest})
+  }
+
+  render() {
+    return (
+      <div>
+        <Searchbar onSubmit={this.handleSubmit}/>
+        <ImageGallery searchRequest={this.state.searchRequest} />
+      </div>
+    );
+  }
 }
 
-export default App;
 
-
-// 22969776-9de8346515d89d44141e5bd5e

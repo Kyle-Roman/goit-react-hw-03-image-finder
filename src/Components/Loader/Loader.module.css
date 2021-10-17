@@ -1,5 +1,10 @@
+.loader_wrapper {
+  position: absolute;
+  right: 50%;
+  bottom: 10%;
+}
+
 .loader {
-  margin-right: 10px;
   animation: loader 2s infinite linear;
 }
 

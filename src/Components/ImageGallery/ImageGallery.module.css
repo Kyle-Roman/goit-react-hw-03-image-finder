@@ -10,3 +10,10 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+.starter {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 26px;
+  font-weight: 500;
+}

@@ -3,7 +3,7 @@ import s from './ImageGalleryItem.module.css'
 
 function ImageGalleryItem({ id, url, alt, onClick, largeUrl }) {
     return (
-        <li id={id} className={s.ImageGalleryItem}>
+        <li id={id} className={s.ImageGalleryItem} onClick={onClick}>
             <img src={url} alt={alt} className={s.ImageGalleryItem_image} />
         </li>
     )   

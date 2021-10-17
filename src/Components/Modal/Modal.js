@@ -1,16 +1,15 @@
 import React from "react";
+
 import s from './Modal.module.css'
 
-
-const Modal = () => {
-
-    return (
-      <div className={s.Overlay}>
+function Modal({ url, alt, onClick }) {
+       return (
+      <div className={s.Overlay} onClick={onClick}>
         <div className={s.Modal}>
-          <img src="" alt="" />
+          <img src={url} alt={alt} />
         </div>
       </div>
-    )
-}
+     )
+};
 
 export default Modal;

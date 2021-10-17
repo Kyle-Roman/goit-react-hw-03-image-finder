@@ -1,35 +1,25 @@
 import React, {Component} from 'react';
 import Searchbar from './Components/Searchbar/Searchbar';
 import ImageGallery from './Components/ImageGallery/ImageGallery';
-// import API from './Components/ApiService/Api'
-import './App.css';
 
-// const searchResult = 'black cat with car';
-// const page = 1;
+import './App.css';
 
 
 export default class App extends Component {
   state = {
     searchRequest: "",
-    page: "",
-    images: null,
+    page: 1,
   };
 
-  componentDidMount() {
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-  }
-
-  handleSubmit = searchRequest => {
-    this.setState({searchRequest})
+  handleSubmit = (searchRequest, page) => {
+    this.setState({searchRequest: searchRequest, page: page})
   }
 
   render() {
     return (
       <div>
         <Searchbar onSubmit={this.handleSubmit}/>
-        <ImageGallery searchRequest={this.state.searchRequest} />
+        <ImageGallery searchRequest={this.state.searchRequest} pageNr={this.state.page} />
       </div>
     );
   }
